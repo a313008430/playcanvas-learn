@@ -1,3 +1,6 @@
 // console.log((this["aaaa"] = 2), module);
 
-export var myGame = 2222;
+export default class tttt {
+	constructor() {}
+}
+console.log(this, cc);

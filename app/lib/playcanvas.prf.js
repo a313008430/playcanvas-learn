@@ -3,14 +3,17 @@
  * Copyright 2011-2020 PlayCanvas Ltd. All rights reserved.
  */
 (function (root, factory) {
-	if (typeof define === "function" && define.amd) {
-		define([], factory);
-	} else if (typeof module === "object" && module.exports) {
-		module.exports = factory();
-	} else {
-		root.pc = factory();
-	}
-})(this, function () {
+	// if (typeof define === "function" && define.amd) {
+	// 	console.log(33);
+	// 	define([], factory);
+	// } else if (typeof module === "object" && module.exports) {
+	// 	console.log(22);
+	// 	module.exports = factory();
+	// } else {
+	// 	console.log(1111);
+	root.pc = factory();
+	// }
+})(global, function () {
 	if (!Array.prototype.find) {
 		Object.defineProperty(Array.prototype, "find", {
 			value: function (predicate) {

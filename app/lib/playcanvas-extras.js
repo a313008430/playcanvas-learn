@@ -10,7 +10,7 @@
 	} else {
 		root.pc = factory();
 	}
-})(this, function () {
+})(global, function () {
 	Object.assign(
 		pc,
 		(function () {

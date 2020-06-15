@@ -12,7 +12,9 @@ const config: webpack.Configuration = {
 	entry: {
 		app: "./app/main.ts",
 	},
-	devtool: "#source-map",
+	// devtool: "#source-map",
+	// devtool: "cheap-module-eval-source-map",
+	devtool: "eval",
 	output: {
 		path: path.resolve(__dirname, "dist"),
 		//[name] 是entry里面的name
@@ -30,9 +32,10 @@ const config: webpack.Configuration = {
 			{
 				test: /\.ts$/,
 				use: "ts-loader",
+				include: path.resolve(__dirname, "app"),
 			},
 			{
-				test: /\.(png|svg|jpg|gif)$/,
+				test: /\.(png|svg|jpg|gif|glb|gltf)$/,
 				use: ["file-loader"],
 			},
 			{

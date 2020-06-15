@@ -35,7 +35,7 @@ const config: webpack.Configuration = {
 				use: "ts-loader",
 			},
 			{
-				test: /\.(png|svg|jpg|gif)$/,
+				test: /\.(png|svg|jpg|gif|glb|gltf)$/,
 				use: ["file-loader"],
 			},
 			{

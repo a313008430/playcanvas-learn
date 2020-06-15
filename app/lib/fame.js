@@ -1902,13 +1902,14 @@ Object.defineProperty(ObserverHistory.prototype, "combine", {
 	});
 
 	// first load
-	document.addEventListener(
-		"DOMContentLoaded",
-		function () {
-			editor.emit("load");
-		},
-		false
-	);
+	console.log("first load load fame editor");
+	// document.addEventListener(
+	// 	"DOMContentLoaded",
+	// 	function () {
+	// 		editor.emit("load");
+	// 	},
+	// 	false
+	// );
 })();
 
 /* launch/messenger.js */
@@ -2499,8 +2500,11 @@ editor.once("load", function () {
 	});
 });
 
+/**
+ * @param data 从main.ts里面传过来
+ */
 /* launch/viewport.js */
-editor.once("load", function () {
+editor.once("load", function (data) {
 	"use strict";
 
 	// Wait for assets, hierarchy and settings to load before initializing application and starting.
@@ -2751,6 +2755,8 @@ editor.once("load", function () {
 	//   });
 
 	//   app = Game.app;
+	app = data.app;
+	// console.log(data);
 
 	if (queryParams.useBundles === "false") {
 		app.enableBundles = false;

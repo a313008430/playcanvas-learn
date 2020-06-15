@@ -1,0 +1,4 @@
+export default {
+  /**  */
+  resize: "resize",
+};
